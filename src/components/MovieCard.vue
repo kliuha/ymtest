@@ -3,16 +3,16 @@
       max-width="250"
     >
       <v-img
-        :src="film.image"
+        :src="movie.image"
         cover
       ></v-img>
   
       <v-card-title>
-        {{ film.name }}
+        {{ movie.name }}
       </v-card-title>
   
       <v-card-subtitle>
-        <span v-html="film.description" class=""></span>
+        <span v-html="movie.description" class=""></span>
       </v-card-subtitle>
   
       <v-card-actions>
@@ -36,7 +36,7 @@
           <v-divider></v-divider>
   
           <v-card-text>
-            <span v-html="film.additional"></span>
+            <span v-html="movie.additional"></span>
           </v-card-text>
         </div>
       </v-expand-transition>
@@ -45,8 +45,10 @@
 
 <script lang="ts" setup>
     import { ref } from 'vue';
+    import { Movie } from '@/types/Api';
+
     defineProps<{
-        film: any
+        movie: Movie
     }>()
     
     const show = ref(false)

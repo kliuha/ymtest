@@ -1,7 +1,11 @@
 <template>
-  <FilmList />
+  <v-text-field
+    prepend-icon="mdi-magnify"
+    single-line
+  ></v-text-field>
+  <MoviesList />
 </template>
 
 <script lang="ts" setup>
-  import FilmList from '@/components/FilmList.vue'
+  import MoviesList from '@/components/MoviesList.vue'
 </script>
