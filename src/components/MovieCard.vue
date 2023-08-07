@@ -19,6 +19,7 @@
         <v-btn
           color="orange-lighten-2"
           variant="text"
+          @click="$emit('openShows', movie.id)"
         >
           Book
         </v-btn>
@@ -26,13 +27,13 @@
         <v-spacer></v-spacer>
   
         <v-btn
-          :icon="show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-          @click="show = !show"
+          :icon="showInfo ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+          @click="showInfo = !showInfo"
         ></v-btn>
       </v-card-actions>
   
       <v-expand-transition>
-        <div v-show="show">
+        <div v-show="showInfo">
           <v-divider></v-divider>
   
           <v-card-text>
@@ -44,14 +45,17 @@
 </template>
 
 <script lang="ts" setup>
-    import { ref } from 'vue';
-    import { Movie } from '@/types/Api';
+  import { ref } from 'vue';
+  import { Movie } from '@/types/Api';
 
-    defineProps<{
-        movie: Movie
-    }>()
-    
-    const show = ref(false)
+  defineProps<{
+    movie: Movie
+  }>()
+  defineEmits<{
+    (e: 'openShows', id: number): void
+  }>()
+
+  const showInfo = ref(false)
 </script>
 
 <style lang="scss" scoped>

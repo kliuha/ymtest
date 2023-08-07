@@ -9,8 +9,7 @@
           ></v-img>
         </template>
     <v-app-bar-title>
-      <v-icon icon="mdi-theater" />
-
+    <v-icon icon="mdi-theater" />
       YM cinema
     </v-app-bar-title>
   </v-app-bar>

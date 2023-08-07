@@ -8,7 +8,4 @@ module.exports = {
     'eslint:recommended',
     '@vue/eslint-config-typescript',
   ],
-  rules: {
-    'vue/multi-word-component-names': 'off',
-  },
 }
