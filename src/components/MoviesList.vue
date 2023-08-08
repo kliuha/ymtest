@@ -1,11 +1,11 @@
 <template>
   <div class="d-flex justify-sm-space-between justify-center flex-wrap my-6">
-        <div 
-          v-for="movie in appStore.moviesList?.data" 
-          :key="movie.id" 
-          class="ma-2 pa-2">
-          <MovieCard :movie="movie" @open-shows="openShows" />
-        </div>
+    <div 
+      v-for="movie in appStore.moviesList?.data" 
+      :key="movie.id" 
+      class="ma-2 pa-2">
+      <MovieCard :movie="movie" @open-shows="openShows" />
+    </div>
   </div>
   <TheSpinner v-if="isLoading" :is-loading="isLoading" />
   <v-alert text="Щось пішло не так =("

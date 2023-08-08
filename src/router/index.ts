@@ -11,9 +11,9 @@ const routes = [
         component: () => import('@/views/TheHome.vue'),
       },
       {
-        path: 'booking?movieId',
+        path: 'booking/:movieId',
         name: 'Booking',
-        component: () => import('@/components/BookingList.vue'),
+        component: () => import('@/views/BookingList.vue'),
       }
     ],
   },

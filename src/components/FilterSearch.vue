@@ -19,13 +19,15 @@
             clearable
         ></v-select>
         <v-btn 
-        class="mb-5 mx-md-2 mx-4"
-        variant="tonal"
-        prepend-icon="mdi-magnify"
-        size="x-large"
-        rounded="xs"
-        @click="startSearch"
-        >Пошук</v-btn>
+            class="mb-5 mx-md-2 mx-4"
+            variant="tonal"
+            prepend-icon="mdi-magnify"
+            size="x-large"
+            rounded="xs"
+            @click="startSearch"
+        >
+            Пошук
+        </v-btn>
         <TheSpinner v-if="isLoading" :is-loading="isLoading" />
     </div>
 </template>
@@ -46,7 +48,6 @@ const searchGenres: Ref<GenresText | null | undefined> = ref(null)
 const isLoading = ref(false)
 
 const startSearch = async () => {
-    if (!searchGenres.value && !searchText.value && appStore.moviesList.data[0]) return
     isLoading.value = true
     await appStore.fetchMoviesWithFilters(searchText.value, GenresId[searchGenres.value as keyof typeof GenresId])
     isLoading.value = false

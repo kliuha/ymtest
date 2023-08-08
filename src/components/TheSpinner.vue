@@ -7,7 +7,6 @@
             indeterminate
             color="purple"
             :size="70"
-            :width="7"
         ></v-progress-circular>
     </v-overlay>
 </template>
